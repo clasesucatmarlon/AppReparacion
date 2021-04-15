@@ -1,38 +1,87 @@
 html {
   min-height: 100%;
 }
+
 body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
   background-image: linear-gradient(-225deg, #3039c5 0%, #1a2370 52%, #18477c 100%);
   min-height: 100%;
-  padding-bottom: 5rem;
 }
-h1, h2  {
+
+h1, h2 {
+  font-size: 3rem;
   color: white;
-  padding: 3rem 0;
+  padding: 4rem 0 0 0;
   text-align: center;
-
   text-transform: uppercase;
-
   font-family: 'Staatliches', cursive;
   letter-spacing: 1px;
 }
+
+.header {
+  background: #C33E5A;
+  height: 8vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 3px 3px 2px 0px black;
+}
+
+.header .header-title {
+  font-size: 4rem;
+  margin: 0;
+  padding: 0;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.footer {
+  background: #C33E5A;
+  height: 8vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+  box-shadow: -2px -2px 2px 0px black;
+}
+
+.footer .footer-title {
+  font-size: 2rem;
+  margin: 0;
+  padding: 0;
+  color: white;
+  font-weight: bold;
+}
+
+.form-border {
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 2rem;
+  background: #465870;
+  box-shadow: 3px 3px 2px 0px black;
+  margin-bottom: 15rem;
+}
+
 .lista-citas .media {
   border-bottom: 1px solid #e1e1e1;
   padding-bottom: 3rem;
 }
 
-.lista-citas .media:last-of-type{
+.lista-citas .media:last-of-type {
   border-bottom: 0;
 }
+
 .lista-citas .media-body p {
-  margin:0;
+  margin: 0;
 }
+
 .lista-citas .media-body button {
   margin-top: 1rem!important;
 }
+
 .lista-citas .media-body span {
   font-weight: bold;
 }
@@ -41,15 +90,14 @@ label {
   color: white;
 }
 
-input[type="date"],
-input[type="time"] {
+input[type="date"], input[type="time"] {
   height: 38px;
-    padding: 6px 10px;
-    background-color: #fff;
-    border: 1px solid #D1D1D1;
-    border-radius: 4px;
-    box-shadow: none;
-    box-sizing: border-box;
+  padding: 6px 10px;
+  background-color: #fff;
+  border: 1px solid #D1D1D1;
+  border-radius: 4px;
+  box-shadow: none;
+  box-sizing: border-box;
 }
 
 .cita {
@@ -59,25 +107,29 @@ input[type="time"] {
   border-bottom: 1px solid #e1e1e1;
   color: black;
   border-radius: 1rem;
+  box-shadow: 3px 3px 2px 0px black;
 }
 
 .cita p {
   font-weight: bold;
   margin-bottom: .8rem;
 }
+
 .cita p span {
   font-weight: normal;
 }
+
 .cita:first-of-type {
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
 }
+
 .cita:last-of-type {
   border-bottom-left-radius: 1rem;
   border-bottom-right-radius: 1rem;
 }
-.button.eliminar,
-.button.eliminar:hover {
+
+.button.eliminar, .button.eliminar:hover {
   background-color: #c10059;
   color: white;
   margin-top: 2rem;
@@ -90,5 +142,21 @@ input[type="time"] {
   font-size: 2rem;
   text-transform: uppercase;
   text-align: center;
-  font-family:  'Staatliches', cursive;
-} 
+  font-family: 'Staatliches', cursive;
+}
+
+
+@media (max-width: 360px)  {
+  .header .header-title {
+    font-size: 1.7rem;
+  }
+  .form-border {
+    margin-bottom: 2rem;
+  }
+  .footer .footer-title {
+    font-size: 1.5rem;
+  }
+  h1, h2 {
+    font-size: 2rem;
+  }
+}
