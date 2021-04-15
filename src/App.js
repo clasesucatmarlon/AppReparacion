@@ -1,11 +1,11 @@
 import React, {useState, useEffect} from 'react';
+import Footer from './componets/Footer';
 import Formulario from "./componets/Formulario";
+import Header from './componets/Header';
 import ListarCitas from './componets/ListarCitas';
 
 
 function App() {
-
-
 
   // CITAS DE LOCALSTORAGE.  Solo almacena string
   let citasIniciales = JSON.parse(localStorage.getItem("citas"));
@@ -39,8 +39,9 @@ function App() {
 
   return (
     <>
-      <h1>Administrador de pacientes</h1>
-      <div className="container">
+      <Header />
+
+      <div className="container container-body">
         <div className="row">
 
           <div className="one-half column">
@@ -56,6 +57,8 @@ function App() {
 
         </div>
       </div>
+
+      <Footer />
     </>
   );
 }
