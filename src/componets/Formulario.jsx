@@ -1,23 +1,26 @@
 import React, { useState } from 'react';
-// import uuid from 'uuid/v4';
+import '../index.css';
+
+// instalar antes la libraría UUID: 
+// https://www.npmjs.com/package/react-uuid
 import uuid from 'react-uuid';
 import PropTypes from 'prop-types';  // documentar los componentes
 
 const Formulario = ({crearCita}) => {
 
     const dataInicial = {
-        mascota: '',
+        producto: '',
         propietario: '',
         fecha: '',
         hora: '',
-        sintomas: ''
+        fallas: ''
     }
 
     const [cita, setCita] = useState(dataInicial);
     const [error, setError] = useState(false);
 
     // Extraer valores de cita
-    const { mascota, propietario, fecha, hora, sintomas } = cita;
+    const { producto, propietario, fecha, hora, fallas } = cita;
 
     // CAPTURAR LOS ELEMENTOS DEL FORMULARIO
     const handleChange = (e) => {
@@ -33,17 +36,14 @@ const Formulario = ({crearCita}) => {
         e.preventDefault();
 
         // Validar inputs
-        if (mascota.trim() === '' || propietario.trim() === '' || fecha.trim() === '' || hora.trim() === '' || sintomas.trim() === '') {
+        if (producto.trim() === '' || propietario.trim() === '' || fecha.trim() === '' || hora.trim() === '' || fallas.trim() === '') {
             setError(true);
             return;
         }
         // Manejo del mensaje de error
         setError(false);
         // Crear ID
-        // instalar antes la libraría UUID: 
-        // https://www.npmjs.com/package/react-uuid
         cita.id = uuid();
-        //console.log(cita);
         // Crear Cita
         crearCita(cita);
         // Resetear el formulario
@@ -55,7 +55,7 @@ const Formulario = ({crearCita}) => {
     return (
         <>
 
-            <h2>Crear cita</h2>
+            <h2>Ingresar producto</h2>
             {
                 error ?
                     (
@@ -65,28 +65,29 @@ const Formulario = ({crearCita}) => {
 
             <form
                 onSubmit={handleSubmit}
+                className="form-border"
             >
-                <label>Nombre de mascota:</label>
+                <label>Producto:</label>
                 <input
                     type="text"
-                    name="mascota"
+                    name="producto"
                     className="u-full-width"
-                    placeholder="Nombre de la mascota"
+                    placeholder="Producto"
                     onChange={handleChange}
-                    value={mascota}
+                    value={producto}
                 />
 
-                <label>Nombre del dueño:</label>
+                <label>Propietario:</label>
                 <input
                     type="text"
                     name="propietario"
                     className="u-full-width"
-                    placeholder="Nombre del dueño de la mascota"
+                    placeholder="Nombre del dueño del producto"
                     onChange={handleChange}
                     value={propietario}
                 />
 
-                <label>Fecha de alta:</label>
+                <label>Fecha de ingreso:</label>
                 <input
                     type="date"
                     name="fecha"
@@ -95,7 +96,7 @@ const Formulario = ({crearCita}) => {
                     value={fecha}
                 />
 
-                <label>Hora de alta:</label>
+                <label>Hora de ingreso:</label>
                 <input
                     type="time"
                     name="hora"
@@ -104,21 +105,20 @@ const Formulario = ({crearCita}) => {
                     value={hora}
                 />
 
-                <label>Síntomas:</label>
+                <label>Fallas:</label>
                 <textarea
-                    name="sintomas"
+                    name="fallas"
                     className="u-full-width"
-                    placeholder="Síntomas que presenta la mascota"
+                    placeholder="Fallas que presenta el producto"
                     onChange={handleChange}
-                    value={sintomas}
+                    value={fallas}
                 >
                 </textarea>
 
                 <button
                     type="submit"
                     className="u-full-width button-primary"
-                >Agregar cita</button>
-
+                >Agregar producto</button>
             </form>
         </ >
     )

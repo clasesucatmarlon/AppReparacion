@@ -7,20 +7,20 @@ const ListarCitas = ({ todasCitas, eliminarCita }) => {
             {
                 todasCitas.length === 0 ?
                 (
-                    <h2>No hay citas.  Agregue una nueva cita</h2>
+                    <h2>No hay productos.  Agregue un nueva producto</h2>
                     )
                     :
                     (
                         <>
-                            <h2>Lista de citas</h2>
+                            <h2>Lista de productos</h2>
                             {
                                 todasCitas.map((item) => (
                                     <div key={item.id} className="cita">
-                                        <p>Mascota: <span className="items-format">{item.mascota}</span></p>
+                                        <p>Producto: <span className="items-format">{item.producto}</span></p>
                                         <p>Dueño: <span className="items-format">{item.propietario}</span></p>
-                                        <p>Fecha: <span className="items-format">{item.fecha}</span></p>
-                                        <p>Hora: <span className="items-format">{item.hora}</span></p>
-                                        <p>Síntomas: <span className="items-format">{item.sintomas}</span></p>
+                                        <p>Fecha ingreso: <span className="items-format">{item.fecha}</span></p>
+                                        <p>Hora ingreso: <span className="items-format">{item.hora}</span></p>
+                                        <p>Fallas: <span className="items-format">{item.fallas}</span></p>
 
                                         <button
                                             className="button eliminar u-full-width"
